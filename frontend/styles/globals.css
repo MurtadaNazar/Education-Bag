@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&family=Titillium+Web:wght@300;400;700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Noto+Kufi+Arabic:wght@100;200;300;400;500;600;700;800;900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cairo: "Cairo";
+  --Dm: "DM Sans";
+  --Kufi: "Noto Kufi Arabic";
+  --Outfit: "Outfit";
+  --Tajawal: "Tajawal";
+  --mainColor: #ffefe1;
+  --mainColorLight: #fdc128;
+  --secondaryColor: #7b7b7b;
+  --textColor: #0f0d36;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/*! foont  */
+.c {
+  font-family: var(--cairo);
+}
+
+.d {
+  font-family: var(--Dm);
+}
+
+.k {
+  font-family: var(--Kufi);
+}
+
+.ot {
+  font-family: var(--Outfit);
+}
+
+.ta {
+  font-family: var(--Tajawal);
+}
+/*! fpnt end  */
+
+/* NavBar */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 0 2rem;
+  background-color: var(--mainColor);
+  color: var(--textColor);
+  z-index: auto;
+}
+
+nav .Link {
+  margin: 0 1rem;
+  color: var(--textColor);
+  text-decoration: none;
+}
+
+nav .Link:hover {
+  color: var(--secondaryColor);
+}
+
+header .nav-btn {
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--textColor);
+  visibility: hidden;
+  opacity: 0;
+  font-size: 1.8rem;
+}
+
+header div,
+nav {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1024px) {
+  header .nav-btn {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: var(--mainColor);
+    transform: translateX(-100vw);
+    transition: 2s all ease-out;
+    opacity: 0;
+  }
+
+  header .responsive_nav {
+    transform: none;
+    transition: 2s all ease-out;
+    opacity: 1;
+  }
+
+  nav .nav-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  nav a {
+    font-size: 1.5rem;
+  }
+}
